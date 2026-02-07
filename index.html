@@ -1,1 +1,162 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Friendship Request</title>\n    <style>\n        body {\n            background-color: #fff8e1;\n            text-align: center;\n            font-family: Arial, sans-serif;\n        }\n        h1 {\n            color: #ffeb3b;\n        }\n        .rose {\n            width: 200px;\n            height: auto;\n            animation: sway 2s infinite;\n        }\n        @keyframes sway {\n            0% { transform: rotate(-2deg); }\n            50% { transform: rotate(2deg); }\n            100% { transform: rotate(-2deg); }\n        }\n        .btn {\n            background-color: #ff4081;\n            color: white;\n            padding: 10px 20px;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n            font-size: 16px;\n            transition: all 0.3s;\n        }\n        .btn:hover {\n            background-color: #f50057;\n            transform: scale(1.1);\n        }\n        .heart {\n            color: red;\n            font-size: 50px;\n            animation: beat 1s infinite;\n        }\n        @keyframes beat {\n            0% { transform: scale(1); }\n            50% { transform: scale(1.2); }\n            100% { transform: scale(1); }\n        }\n    </style>\n</head>\n<body>\n    <h1>Send a Friendship Request!</h1>\n    <img class="rose" src="https://example.com/yellow-rose.png" alt="Yellow Rose">\n    <div>\n        <button class="btn">Send Request</button>\n        <span class="heart">❤️</span>\n    </div>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Priyal 💛</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fff7cc, #ffe680);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 22px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+      color: #d4a000;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .rose {
+      font-size: 95px;
+      animation: float 2.5s infinite ease-in-out;
+      margin-bottom: 5px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 20px;
+      border-radius: 14px;
+      margin: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #ffd700;
+      color: #222;
+      font-weight: bold;
+    }
+
+    .yes:hover {
+      background: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    .no {
+      background: #f1f1f1;
+      color: #333;
+    }
+
+    .no:hover {
+      background: #ddd;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="mainCard">
+    <div class="rose">🌼</div>
+    <h1>Priyal 💛</h1>
+
+    <p>
+      This yellow rose is for you 🌼✨ <br>
+      Because honestly… you seem like a really sweet and genuine person.
+    </p>
+
+    <p>
+      I just wanted to ask something simple, but meaningful...
+    </p>
+
+    <p><b>Can we be friends?</b> 🥺💛</p>
+
+    <button class="yes" onclick="yesClicked()">Yes, Jignesh 💛</button>
+    <button class="no" onclick="noClicked()">Maybe later 🙈</button>
+
+    <div class="signature">— From Jignesh 🌙</div>
+  </div>
+
+  <div class="card hidden" id="yesCard">
+    <div class="rose">🌼💛</div>
+    <h1>Yayyy Priyal 🥹💛</h1>
+
+    <p>
+      This honestly made me smile.  
+      I'm really happy you said yes ✨
+    </p>
+
+    <p><b>Now you're officially my friend 💛</b></p>
+
+    <div class="signature">— Your friend, Jignesh 🌼</div>
+  </div>
+
+  <div class="card hidden" id="noCard">
+    <div class="rose">🌼🙂</div>
+    <h1>No worries Priyal 💛</h1>
+
+    <p>
+      Totally okay. No pressure at all.
+    </p>
+
+    <p><b>The yellow rose is still yours 💛</b></p>
+
+    <div class="signature">— Jignesh 🌙</div>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.getElementById("mainCard").classList.add("hidden");
+      document.getElementById("yesCard").classList.remove("hidden");
+    }
+
+    function noClicked() {
+      document.getElementById("mainCard").classList.add("hidden");
+      document.getElementById("noCard").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
