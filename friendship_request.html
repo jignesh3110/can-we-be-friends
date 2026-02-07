@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Request</title>
+</head>
+<body>
+    <h1>Friendship Request Page</h1>
+    <form action="/send-friend-request" method="post">
+        <label for="friend-name">Friend's Name:</label>
+        <input type="text" id="friend-name" name="friend-name" required>
+        <input type="submit" value="Send Request">
+    </form>
+    <h2>Pending Requests</h2>
+    <ul id="pending-requests">
+        <li>Friend A <button>Cancel</button></li>
+        <li>Friend B <button>Cancel</button></li>
+        <li>Friend C <button>Cancel</button></li>
+    </ul>
+</body>
+</html>
