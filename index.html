@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", Arial, sans-serif;
       background: linear-gradient(to bottom, #fff7cc, #ffe680);
       display: flex;
       justify-content: center;
@@ -25,6 +25,7 @@
       width: 90%;
       max-width: 450px;
       box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.3s ease;
     }
 
     h1 {
@@ -37,7 +38,7 @@
       font-size: 16px;
       color: #333;
       margin-bottom: 18px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .rose {
@@ -77,10 +78,6 @@
       transform: scale(1.05);
     }
 
-    .hidden {
-      display: none;
-    }
-
     .signature {
       margin-top: 20px;
       font-size: 14px;
@@ -88,74 +85,104 @@
       font-style: italic;
     }
 
+    .note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 12px;
+    }
+
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-12px); }
       100% { transform: translateY(0px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0px); }
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 18px;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card" id="mainCard">
+  <div class="hearts" id="hearts"></div>
+
+  <div class="card">
     <div class="rose">🌼</div>
+
     <h1>Priyal 💛</h1>
 
     <p>
       This yellow rose is for you 🌼✨ <br>
-      Because honestly… you seem like a really sweet and genuine person.
+      Because I genuinely enjoy talking to you.
     </p>
 
     <p>
-      I just wanted to ask something simple, but meaningful...
+      We already talk, but I just wanted to ask something simple…
     </p>
 
-    <p><b>Can we be friends?</b> 🥺💛</p>
+    <p><b>Can we officially be good friends? 😊💛</b></p>
 
-    <button class="yes" onclick="yesClicked()">Yes, Jignesh 💛</button>
-    <button class="no" onclick="noClicked()">Maybe later 🙈</button>
+    <button class="yes"
+      onclick="window.location.href='https://wa.me/917069290920?text=Hey%20Jignesh%20%F0%9F%92%9B%0AYes%2C%20we%20are%20good%20friends%20%F0%9F%98%8A%F0%9F%8C%BC%0AThe%20yellow%20rose%20was%20cute%20%F0%9F%8C%BC%F0%9F%92%9B'">
+      Yes, friends 💛
+    </button>
+
+    <button class="no"
+      onclick="window.location.href='https://wa.me/917069290920?text=Hey%20Jignesh%20%F0%9F%98%85%0ALet%E2%80%99s%20talk%20more%20first%20%F0%9F%98%8A%F0%9F%8C%BC%0ABut%20the%20yellow%20rose%20was%20really%20sweet%20%F0%9F%92%9B'">
+      Maybe later 🙂
+    </button>
+
+    <p class="note">
+      (No pressure at all, just a small sweet gesture 🌼)
+    </p>
 
     <div class="signature">— From Jignesh 🌙</div>
   </div>
 
-  <div class="card hidden" id="yesCard">
-    <div class="rose">🌼💛</div>
-    <h1>Yayyy Priyal 🥹💛</h1>
-
-    <p>
-      This honestly made me smile.  
-      I'm really happy you said yes ✨
-    </p>
-
-    <p><b>Now you're officially my friend 💛</b></p>
-
-    <div class="signature">— Your friend, Jignesh 🌼</div>
-  </div>
-
-  <div class="card hidden" id="noCard">
-    <div class="rose">🌼🙂</div>
-    <h1>No worries Priyal 💛</h1>
-
-    <p>
-      Totally okay. No pressure at all.
-    </p>
-
-    <p><b>The yellow rose is still yours 💛</b></p>
-
-    <div class="signature">— Jignesh 🌙</div>
-  </div>
-
   <script>
-    function yesClicked() {
-      document.getElementById("mainCard").classList.add("hidden");
-      document.getElementById("yesCard").classList.remove("hidden");
+    const heartsContainer = document.getElementById("hearts");
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💛";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      heart.style.fontSize = (Math.random() * 15 + 12) + "px";
+
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
     }
 
-    function noClicked() {
-      document.getElementById("mainCard").classList.add("hidden");
-      document.getElementById("noCard").classList.remove("hidden");
-    }
+    setInterval(createHeart, 250);
   </script>
 
 </body>
